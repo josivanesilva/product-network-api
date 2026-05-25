@@ -2,11 +2,11 @@
 API de gerenciamento de estoque e transferência de produtos entre fábrica e loja, com geração de nota fiscal e auditoria de movimentações. 
 Desenvolvido com Spring Boot, JPA e arquitetura em camadas.
 
-    Objetivo do Projeto
+# Objetivo do Projeto
 
 Este projeto simula uma arquitetura de microsserviços utilizada em empresas de varejo e logística.
 
-O sistema possui:
+# O sistema possui:
 
 - Fabricação de produtos
 - Controle de estoque
@@ -17,9 +17,9 @@ O sistema possui:
 - Persistência em PostgreSQL
 - Arquitetura modular Maven
 
-    Microsserviços
+# Microsserviços
 
-    1️ - fabrica-nike
+1️ - fabrica-nike
 
 Responsável por:
 
@@ -31,7 +31,7 @@ Emissão de notas fiscais
 Comunicação com loja-service
 
 
-    2 - loja-service
+2 - loja-service
 
 Responsável por:
 
@@ -39,7 +39,7 @@ Receber produtos transferidos da fábrica
 Manter estoque da loja
 Persistir produtos recebidos
 
-    Tecnologias Utilizadas
+# Tecnologias Utilizadas
 Backend
 Java 17
 Spring Boot 4
@@ -51,7 +51,7 @@ Maven
 Lombok
 MapStruct
 
-    Estrutura do Projeto
+# Estrutura do Projeto
 product-network-api
 │
 ├── fabrica-nike
@@ -60,7 +60,7 @@ product-network-api
 │
 └── api
 
-    Comunicação Entre Microsserviços
+# Comunicação Entre Microsserviços
 
 A comunicação ocorre via:
 
@@ -74,7 +74,7 @@ POST /loja/receber
     ↓
 loja-service
 
-    Fluxo da Transferência
+# Fluxo da Transferência
 1 - Produto é produzido na fábrica
 
     ↓
@@ -97,7 +97,7 @@ loja-service
 
 6 - Produto é salvo no banco da loja
 
-    Endpoints — fabrica-nike
+# Endpoints — fabrica-nike
 Produtos
 Criar produto
 
@@ -118,7 +118,7 @@ JSON
         "precoVenda": 450
     }
 
-    Testando no Postman
+# Testando no Postman
 
 Estrutura recomendada:
 
@@ -133,7 +133,7 @@ Loja
 │
 └── Produtos Loja
 
-    Conceitos Aplicados
+# Conceitos Aplicados
 
 -Microsserviços
 -REST APIs
@@ -148,7 +148,7 @@ Loja
 -PostgreSQL
 -JPA/Hibernate
 
-    Autor
+# Autor
 
 Desenvolvido por Josivane Aparecido.
 
