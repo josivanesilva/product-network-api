@@ -8,14 +8,14 @@ Este projeto simula uma arquitetura de microsserviços utilizada em empresas de 
 
 O sistema possui:
 
-✅ Fabricação de produtos
-✅ Controle de estoque
-✅ Movimentações de estoque
-✅ Geração de nota fiscal
-✅ Transferência entre serviços
-✅ Comunicação entre microsserviços via REST API
-✅ Persistência em PostgreSQL
-✅ Arquitetura modular Maven
+- Fabricação de produtos
+- Controle de estoque
+- Movimentações de estoque
+- Geração de nota fiscal
+- Transferência entre serviços
+- Comunicação entre microsserviços via REST API
+- Persistência em PostgreSQL
+- Arquitetura modular Maven
 
     Microsserviços
 
