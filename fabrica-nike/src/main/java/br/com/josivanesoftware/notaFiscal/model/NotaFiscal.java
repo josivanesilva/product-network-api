@@ -9,6 +9,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
@@ -25,5 +26,5 @@ public class NotaFiscal {
     private LocalDateTime dataEmissao;
     private String origem;
     private String destino;
-    private Double valorTotal;
+    private BigDecimal valorTotal;
 }

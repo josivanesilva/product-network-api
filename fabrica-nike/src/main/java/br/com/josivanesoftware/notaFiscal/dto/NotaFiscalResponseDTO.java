@@ -1,9 +1,19 @@
 package br.com.josivanesoftware.notaFiscal.dto;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+@JsonPropertyOrder({
+        "id",
+        "numero",
+        "dataEmissao",
+        "origem",
+        "destino",
+        "valorTotal"
+})
 @Data
 public class NotaFiscalResponseDTO {
 
@@ -12,5 +22,5 @@ public class NotaFiscalResponseDTO {
     private LocalDateTime dataEmissao;
     private String origem;
     private String destino;
-    private Double valorTotal;
+    private BigDecimal valorTotal;
 }

@@ -5,6 +5,8 @@ import br.com.josivanesoftware.produto.enums.StatusProduto;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,7 +20,9 @@ public class Produto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    //@Column(unique = true)
     private String codigo;
+
     private String marca;
     private String descricao;
     private String modelo;
@@ -33,7 +37,7 @@ public class Produto {
     private int tamanho;
     private int quantidade;
 
-    private double precoCusto;
-    private double precoVenda;
+    private BigDecimal precoCusto;
+    private BigDecimal precoVenda;
 
 }

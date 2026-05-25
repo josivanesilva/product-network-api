@@ -7,6 +7,7 @@ import br.com.josivanesoftware.produto.enums.StatusProduto;
 import br.com.josivanesoftware.produto.mapper.ProdutoMapper;
 import br.com.josivanesoftware.produto.model.Produto;
 import br.com.josivanesoftware.produto.repository.ProdutoRepository;
+import br.com.josivanesoftware.shared.service.CodigoProdutoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,10 +21,12 @@ public class ProdutoService {
 
     private final ProdutoRepository produtoRepository;
     private final ProdutoMapper produtoMapper;
+    private final CodigoProdutoService codigoProdutoService;
 
-    public ProdutoService(ProdutoRepository produtoRepository, ProdutoMapper produtoMapper) {
+    public ProdutoService(ProdutoRepository produtoRepository, ProdutoMapper produtoMapper, CodigoProdutoService codigoProdutoService) {
         this.produtoRepository = produtoRepository;
         this.produtoMapper = produtoMapper;
+        this.codigoProdutoService = codigoProdutoService;
     }
 
     @Transactional
@@ -33,10 +36,11 @@ public class ProdutoService {
 
     // Regra de negócio: gerar código se não informado
         if (produto.getCodigo() == null || produto.getCodigo().isBlank()){
-            produto.setCodigo("PROD-" + UUID.randomUUID().toString().substring(0,8));
+            //produto.setCodigo("PROD-" + UUID.randomUUID().toString().substring(0,8));
+        produto.setCodigo(codigoProdutoService.geraCodigo());
         }
 
-    // Regra de negócio: status inicial
+    // REGRA DE NEGOCIOS: STATUS INICIAL
         produto.setStatus(StatusProduto.PRODUZIDO);
 
         Produto salvo = produtoRepository.save(produto);

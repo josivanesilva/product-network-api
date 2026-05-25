@@ -1,6 +1,7 @@
 package br.com.josivanesoftware.transferencia.model;
 
 import br.com.josivanesoftware.notaFiscal.model.NotaFiscal;
+import br.com.josivanesoftware.transferencia.enums.StatusTransferencia;
 import br.com.josivanesoftware.transferencia.enums.TransferenciaProdutos;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -27,6 +28,9 @@ public class Transferencia {
 
     @Enumerated(EnumType.STRING)
     private TransferenciaProdutos tipo;
+
+    @Enumerated(EnumType.STRING)
+    private StatusTransferencia status;
 
     @OneToOne
     private NotaFiscal notaFiscal;
